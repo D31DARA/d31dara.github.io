@@ -1,10 +1,7 @@
-.grid {
-  /* using `dense` to fill gaps automatically. */
-  grid-auto-flow: dense;
+:nth-child(odd):after {
+  content: '(';
 }
 
-.cell {
-  /* using `span` to change cell size */
-  grid-column-end: span <num>;
-  grid-row-end: span <num>;
+:nth-child(even):after {
+  content: ')';
 }

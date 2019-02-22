@@ -1,4 +1,84 @@
-<p>
+<html>
+    <head>
+        <title>Загрузка файла из JavaScript.</title>
+    </head>
+    <body>
+        <form onsubmit="onFormSubmit(); return false;">
+            <p>
+                <label for="demo_filename">Название файла:</label><br>
+                <input type="text" id="demo_filename">
+            </p>
+            <p>
+                <label for="demo_content">Содержимое:</label><br>
+                <textarea id="demo_content"></textarea>
+            </p>
+
+            <button type="submit">Загрузка</button>
+        </form>
+        <script type="text/javascript">
+            function downloadFile(data="", fileName="test.txt", type="text/plain") {
+            
+                // создаем невидимый элемент ссылки
+                const a = document.createElement("a");
+                a.style.display = "none";
+                document.body.appendChild(a);
+                
+                // в качестве данных для загрузки из ссылки устанавливаем данные из формы
+                a.href = window.URL.createObjectURL(
+                    new Blob([data], { type })
+                );
+                
+                // аттрибут download ссылки используется для загрузки файла
+                a.setAttribute("download", fileName);
+
+                // запускаем загрузку путем эмулирования нажатия клавиши
+                a.click();
+
+                // удаляем ссылку из DOM
+                document.body.removeChild(a);
+            }
+            
+            // вызывается при отправке формы
+            function onFormSubmit() {
+                downloadFile(
+                    document.getElementById("demo_content").value,
+                    document.getElementById("demo_filename").value
+                );
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>
   <b id="earn">0</b> рублей
 </p>
 <form name="formearn" action="" method="post" onsubmit="return false;">

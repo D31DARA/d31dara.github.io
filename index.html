@@ -2,110 +2,20 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8" />
-<title>TopTopic</title>
+<title>transition</title>
 <style>
-/* Шапка сайта */
-.main-header {
-/* Задаём относительное позиционирование */
-position: relative;
-/* Размер шапки сайта */
-width: 100%;
-height: 250px;
-overflow: hidden;
-/* Фон шапкм сайта */
-background: steelblue;
-/* Подключаем анимацию */
-animation: main-hed 15s linear;
-}
-/* Название сайта */
-.main-title{
-/* Позиционируем абсолютно, относительно блока main-header */
+div {
 position: absolute;
-left: -2em;
-right: -2em;
-top: 30%;
-/* Оформляем шрифт */
-color: #fff;
-font-family: Monotype Corsiva;
-letter-spacing: 0.3em;
-text-align: center;
-text-transform: uppercase;
-/* Подключаем анимацию */
-animation: main-titl 15s linear;
+top:50px;
+left:100px;
+width: 200px;
+height: 200px;
+border-radius: 50%;
+background-color: #FF3D00;
+transition: left 2s linear 0.2s;
 }
-/**/
-.main-description{
-/* Позиционируем абсолютно, относительно блока main-header */
-position: absolute;
-right: -2em;
-left: -2em;
-top: 50%;
-/* Оформляем шрифт */
-color: #fff;
-font-family: Georgia;
-font-size: 16px;
-letter-spacing: 0.2em;
-text-align: center;
-font-style: italic;
-/* Подключаем анимацию */
-animation: main-descript 15s linear;
-}
-/* Анимация фона шапки сайта */
-@keyframes main-hed {
-0% {
-/* Начальный цвет */
-background: #28014D;
-}
-/* Конечный цвет */
-100% {
-background: steelblue;
-}
-}
-
-/* Анимация названия сайта */
-@keyframes main-titl{
-0% {
-/* Полная прозрачность */
-opacity: 0;
-/* Масштабируется по вертикали и горизрнтали с нуля */
-transform: scale(0);
-}
-100% {
-/* Полная непрозрачность */
-opacity: 1;
-/* Конечный масштаб 1 х 1 */
-transform: scale(1);
-}
-}
-
-/* Анимация описания сайта */
-@keyframes main-descript {
-0% {
-/* Начало анимации в точке внизу шапки сайта */
-transform: translateY(6em);
-/* Полная прозрачность */
-opacity: 0;
-}
-/* Возрастание непрозрачности */
-50% {
-opacity: 0.1;
-}
-75% {
-opacity: 0.3;
-}
-100% {
-/* Завершение анимации в точке позиционирования */
-transform: translateY(0);
-/* Полная непрозрачность */
-opacity: 1;
-}
+div:hover {
+left: 200px;
 }
 </style>
 </head>
-<body>
-<div class="main-header">
-<h1 class="main-title">TopTopic</h1>
-<p class="main-description">ЧТО ТЫ ТУТ ТВОРИШЬ? ТЫ АХУЕЛ?</p>
-</div>
-</body>
-</html>

@@ -1,62 +1,87 @@
-.nav {
-background: white;
-text-align: center;
+
+/* Затемнение экрана */
+.tele {
+position: fixed;
+top: 0;	/* Растягиваем по краям экрана */
+right: 0;
+bottom: 0;
+left: 0;
+background: rgba(0,0,0,0.2); /* Затемнение */
+z-index: 99999;	/* Поверх всех слоёв */
+pointer-events: none;	/* Запрет мыши */
+display: block;
+animation: main-titl 3s linear; /* Плавное появление */
 }
-.nav a {
+/* Применяем к идентификатору */
+.tele:target {
+display: none;
+pointer-events: auto; /* Восстанавливаем мышь */
+}
+/* Окно */
+.modal{
+width: 25%;
+position: fixed;
+top: 30%;
+left: 30%;
+right: 30%;
+padding: 10px;
+pointer-events: auto; /* Восстанавливаем доступ к ссылкам */
+text-align: center;
+line-height: 25px;
+border-radius: 3px;
+background: #fff;
+box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4),
+-1px 0 2px rgba(0, 0, 0, 0.4);
+}
+/* Кнопка Закрыть */
+.alles {
+position: absolute;
+top: 5px;
+right: 5px;
+width: 30px;
+background: #FFF;
+color: #888;
+line-height: 18px;
+text-align: center;
 text-decoration: none;
-display: block;
-transition: .5s linear;
+font-family: Arial;
+border: 2px colid #FF5037;
+border-radius: 2px;
+animation: main-close 3s linear; /* Кнопка появляется вместе с затемнением */
 }
-.nav ul {
-list-style: none;
-margin: 0;
-padding: 0;
+.alles:hover {
+background: #FF5037;
 }
-.topmenu > li {
-display: block;
-/*Если вместо block задать inline-block,
-меню будет горизонтальным*/
-position: relative;
+.alles:active {
+background: rgba(0, 0, 0, 0.01);
 }
-.topmenu > li > a {
-font-weight: bold;
-padding: 10px 30px;
-font-size: 12px;
-text-transform: uppercase;
-letter-spacing: 2px;
-color: #1c1c1c;
-border: 1px solid #999;
+.alles:visited {
+background: #fff;
 }
-.submenu {
-position: absolute;
-left: 10px;
-z-index: 5;
-width: 240px;
-visibility: hidden;
+
+@keyframes main-titl {
+0% {
+transform: translateY(6em);
 opacity: 0;
-transform: translateY(10px);
-transition: .5s ease-in-out;
 }
-.submenu li {
-position: relative;
-border: 1px solid #999;
-margin:2px;
+95% {
+opacity: 0;
 }
-.submenu a {
-background: white;
-color: #1c1c1c;
-text-align: center;
-font-size: 14px;
-letter-spacing: 1px;
-padding: 10px 20px;
-}
-.submenu .submenu {
-position: absolute;
-top: 0;
-left: 200px;
-}
-.nav li:hover > .submenu {
-visibility: visible;
+100% {
+transform: translateY(0);
 opacity: 1;
-transform: translateY(0px);
+}
+}
+@keyframes main-close {
+0% {
+transform: translateY(6em);
+opacity: 0;
+}
+95% {
+opacity: 0;
+}
+100% {
+transform: translateY(0);
+opacity: 1;
+}
 }

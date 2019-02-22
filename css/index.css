@@ -1,87 +1,31 @@
-
-/* Затемнение экрана */
-.tele {
-position: fixed;
-top: 0;	/* Растягиваем по краям экрана */
-right: 0;
-bottom: 0;
-left: 0;
-background: rgba(0,0,0,0.2); /* Затемнение */
-z-index: 99999;	/* Поверх всех слоёв */
-pointer-events: none;	/* Запрет мыши */
-display: block;
-animation: main-titl 3s linear; /* Плавное появление */
+CSS
+/*Создаём бокс для двух элементов*/
+.main-box {
+width: 100px;
+height: 100px;
+border: 2px solid #463E48;
+/* Подключаем свойство transform-style для 3D */
+transform-style: preserve-3d;
+/* Подключаем анимацию для вращения и обзора */
+animation: main-rotate 10s infinite linear;
 }
-/* Применяем к идентификатору */
-.tele:target {
-display: none;
-pointer-events: auto; /* Восстанавливаем мышь */
-}
-/* Окно */
-.modal{
-width: 25%;
-position: fixed;
-top: 30%;
-left: 30%;
-right: 30%;
-padding: 10px;
-pointer-events: auto; /* Восстанавливаем доступ к ссылкам */
-text-align: center;
-line-height: 25px;
-border-radius: 3px;
-background: #fff;
-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4),
--1px 0 2px rgba(0, 0, 0, 0.4);
-}
-/* Кнопка Закрыть */
-.alles {
+/* Наружний квадрат */
+.outer {
 position: absolute;
-top: 5px;
-right: 5px;
-width: 30px;
-background: #FFF;
-color: #888;
-line-height: 18px;
-text-align: center;
-text-decoration: none;
-font-family: Arial;
-border: 2px colid #FF5037;
-border-radius: 2px;
-animation: main-close 3s linear; /* Кнопка появляется вместе с затемнением */
+width: 100px;
+height: 100px;
+/* Прозрачность для лучшего визуального восприятия */
+opacity: 0.7;
 }
-.alles:hover {
-background: #FF5037;
+/*Внутренний квадрат*/
+.interior {
+/* Отодвигаем внурь и уменьшаем масштаб */
+transform: translateZ(-5em) scale(0.8);
+background: #463E48;
 }
-.alles:active {
-background: rgba(0, 0, 0, 0.01);
-}
-.alles:visited {
-background: #fff;
-}
-
-@keyframes main-titl {
-0% {
-transform: translateY(6em);
-opacity: 0;
-}
-95% {
-opacity: 0;
-}
+/* Анимация вращение вокруг вертикальной оси*/
+@keyframes main-rotate {
 100% {
-transform: translateY(0);
-opacity: 1;
-}
-}
-@keyframes main-close {
-0% {
-transform: translateY(6em);
-opacity: 0;
-}
-95% {
-opacity: 0;
-}
-100% {
-transform: translateY(0);
-opacity: 1;
+transform: rotateY(360deg);
 }
 }

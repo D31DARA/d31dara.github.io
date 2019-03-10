@@ -14,3 +14,31 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 #digital_watch {
     margin-right: auto;
 }
+
+ul.css-menu-1 {
+list-style: none
+}
+
+ul.css-menu-1 li {
+display: inline
+}
+
+ul.css-menu-1 li a {
+font-family: Tahoma, Geneva, sans-serif; 
+text-decoration: none;
+background: #5c6cb7;
+font-weight: bold;
+color: #ffaa00; 
+padding: 6px 10px 6px 10px
+}
+
+ul.css-menu-1 li a:hover {
+padding: 6px 10px 6px 10px;
+font-weight: bold;
+background: #364d95;
+color: #ff9900 
+}
+
+ul.css-menu-1 li a.selected {
+background: #364e95
+} 

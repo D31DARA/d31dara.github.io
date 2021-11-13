@@ -58,3 +58,6 @@
 @media (max-width: 630px) {
 .menu-main li {display: block;}
 }
+body {
+	background: Gray;
+}
